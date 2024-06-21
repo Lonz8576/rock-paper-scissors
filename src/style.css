@@ -8,14 +8,18 @@
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
-}
+}*/
 
-/*reset*/
+
 :root{
     --white-text: rgb(243, 243, 243);
     --dark-text: rgb(86, 84, 104);
     --score-text: rgb(42, 69, 194);
     --outline-color:  rgb(96, 110, 133);
+}
+a{
+    text-decoration: none;
+    color:#131537
 }
 
 /*Layout*/
@@ -163,4 +167,9 @@ body{
 .choice-btn[data-choice="rock"]{
     grid-area: rock;
     justify-self: center;
+}
+.card-body{
+    background:rgb(236, 169, 34, 0.8) ;
+    box-shadow: -4px 8px 1px 0.5px rgba(19, 18, 18, 0.473);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
