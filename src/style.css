@@ -1,21 +1,112 @@
 
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
+
+/*.//
+.inconsolata-<uniquifier> {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 /*reset*/
+:root{
+    --white-text: rgb(243, 243, 243);
+    --dark-text: rgb(86, 84, 104);
+    --score-text: rgb(42, 69, 194);
+    --outline-color:  rgb(96, 110, 133);
+}
 *{
     margin: 0 auto;
+    padding: 0;
     box-sizing: border-box;
 }
 /*Layout*/
 body{
-    font-family:"Poppins", sans-serif;
+    font-family:"Inconsolata", monospace;
 }
 .container-sm{
     background:radial-gradient(134% 134% at 50% 0%, #1f3757 0%, #131537 100%);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5em;
+}
+.scoreboard{
+    border:3px solid var(--outline-color);
+    border-radius: 10px;
+    width: 100%;
+    padding-top:1em;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    margin-left: 2em;
+}
+.score{
+    background-color: var(--white-text);
+    border-radius: 8px;
+    margin-right: 2em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.score h1{
+    color:var(--dark-text);
+    font-size: 3.5em;
+    font-weight: 800;
+    font-weight: 900;
+    margin-top: 0;
+}
+.score p{
+    color: var(--score-text);
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin-top: 1em;
+    margin-bottom: 0;
+
+}
+/* Buttons */
+.hands{
+    display: grid;
+    position: relative;
+    grid-template-columns: (repeat(2, 1fr));
+    grid-gap: 8em;
+    grid-column-gap: 12em;
+    grid-template-areas:
+    "paper scissors"
+    "rock rock";
+    padding-top: 6rem;
+    justify-content:space-evenly;
+}
+.choice{
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background: var(--white-text);
+    align-content: center;
+    border-radius: 50%;
+
+}
+.choice-btn{
+    border: none;
+    background:none;
+    outline: none;
+}
+.choice-btn[data-choice="paper"]{
+    grid-area: paper;
+}
+.choice-btn[data-choice="scissors"]{
+    grid-area: scissors;
+}
+.choice-btn[data-choice="rock"]{
+    grid-area: rock;
+    justify-self: center;
 }
