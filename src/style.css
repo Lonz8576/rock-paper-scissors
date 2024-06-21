@@ -83,7 +83,8 @@ body{
     padding-top: 6rem;
     justify-content:space-evenly;
 }
-.hands::before{
+.hands::before,
+.hands::after{
     content: "";
     position: absolute;
     width:100%;
@@ -97,11 +98,20 @@ body{
 
 .choice{
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     background: var(--white-text);
     align-content: center;
     border-radius: 50%;
+    box-shadow: inset 2px 8px 3px rgba(18, 18, 18, 0.4);
+}
+.choice img{
+    transform:scale(1.5);
+}
+.choice:hover{
+    transition: 2s ease-in-out;
+    box-shadow: rgba(141, 142, 145, 0.39);
+    z-index: 1;
 }
 .choice.paper::before{
     content:"";
@@ -113,6 +123,7 @@ body{
     border-radius: 50%;
     background:  rgb(86, 113, 245);
     z-index: -1;
+    box-shadow: 1px 10px 3px  rgb(7, 14, 48);
 }
 .choice.scissors::before{
     content:"";
@@ -124,6 +135,7 @@ body{
     border-radius: 50%;
     background: rgb(236, 169, 34);
     z-index: -1;
+    box-shadow: 1px 10px 3px  rgb(43, 31, 7);
 }
 .choice.rock::before{
     content:"";
@@ -135,6 +147,7 @@ body{
     border-radius: 50%;
     background: rgb(220, 46, 78);
     z-index: -1;
+    box-shadow:1px 10px 3px rgb(46, 9, 16);
 }
 .choice-btn{
     border: none;
