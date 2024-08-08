@@ -39,7 +39,7 @@ body{
 .scoreboard{
     border:3px solid var(--outline-color);
     border-radius: 10px;
-    width: 100%;
+    width: 75%;
     padding-top:1em;
     margin-top: 2em;
     display: flex;
@@ -95,9 +95,13 @@ body{
     height: 100%;
     background-image: url("/rock-paper-scissors/src/images/bg-triangle.svg");
     top:35%;
-    left: 20%;
+    left: 17%;
     background-repeat: no-repeat;
     z-index: -2;
+}
+.hands::after{
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .choice{
@@ -113,9 +117,10 @@ body{
     transform:scale(1.5);
 }
 .choice:hover{
-    transition: 2s ease-in-out;
+    transition: 200ms ease-in-out;
     box-shadow: rgba(141, 142, 145, 0.39);
     z-index: 1;
+    transform:scale(1.1);
 }
 .choice.paper::before{
     content:"";
@@ -158,6 +163,11 @@ body{
     background:none;
     outline: none;
 }
+.choice-btn:focus .choice::after {
+    opacity: 1;
+    box-shadow: 0 0 0 2rem #223351;
+    z-index: -2;
+}
 .choice-btn[data-choice="paper"]{
     grid-area: paper;
 }
@@ -168,8 +178,12 @@ body{
     grid-area: rock;
     justify-self: center;
 }
+/* footer*/
 .card-body{
     background:rgb(236, 169, 34, 0.8) ;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
     box-shadow: -4px 8px 1px 0.5px rgba(19, 18, 18, 0.473);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
