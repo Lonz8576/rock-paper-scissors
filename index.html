@@ -25,26 +25,46 @@
 
     <section class="hands z-3">
         <button class="choice-btn" data-choice="paper">
-            <div class="choice paper">
+            <div class="choice paper" tabindex="2" >
             <img src="/rock-paper-scissors\src\images\icon-paper.svg"  alt="Paper"/>
         </div>
             </button>
 
         <button class="choice-btn" data-choice="scissors">
-         <div class="choice scissors">
+         <div class="choice scissors" tabindex="3" >
             <img src="/rock-paper-scissors\src\images\icon-scissors.svg"alt="Scissors" />
         </div>
         </button>
 
         <button class="choice-btn" data-choice="rock">
-            <div class="choice rock">
+            <div class="choice rock" tabindex="4">
             <img src="/rock-paper-scissors\src\images\icon-rock.svg" alt="Rock"/>
             </div>
         </button>
     </section>
 
-    <button class="rules-btn px-4 py-2">rules</button>
 
+    <div class="container-fluid">
+    <div class="row m-5 justify-content-end">  
+    <button class="rules-btn col-2 py-2" tabindex="1">rules</button>
+   </div>
+    </div> 
+    
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Rules</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="./src/images/icon-close.svg" alt="close button"></button>
+            </div>
+            <div class="modal-body">
+              <p><img src="./src/images/image-rules.svg"></p>
+            </div>
+           
+            </div>
+          </div>
+        </div>
+      
 
 <footer class="footer mt-5">
 <div class="card text-center mt-5">
@@ -55,7 +75,7 @@
   </div>
 </div>
 </footer>
-</div>
+</div></div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -163,10 +163,12 @@ body{
     background:none;
     outline: none;
 }
-.choice-btn:focus .choice::after {
+.choice:focus    {
     opacity: 1;
     box-shadow: 0 0 0 2rem #223351;
-    z-index: -2;
+    z-index:    1;
+    transition: 200ms ease-in-out;
+    box-shadow: rgba(141, 142, 145, 0.39);
 }
 .choice-btn[data-choice="paper"]{
     grid-area: paper;
@@ -181,18 +183,15 @@ body{
 /*rules button */
 
 .rules-btn{
-    position: relative;
-    display: flex;
-    top:5rem;
-    right:-20rem;
     background: none;
     color: var(--white-text);
     border-radius: 10px;
     outline: none;
     border: 2px solid var(--outline-color);
-    font-family: "Inconsolata", monospace;;
+    font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-size: 20px;
+    justify-content: right;
     letter-spacing: .2em;
     cursor: pointer;
 }
@@ -201,6 +200,20 @@ body{
 }
 .rules-btn:hover{
     border:3px solid white;
+}
+/*rules modal */
+.modal{
+    place-items: center;
+    display: grid;
+    background: radial-gradient( hsl(214, 47%, 23%) to hsl(237, 49%, 15%));
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+
+}
+.modal-header{
+    font-size: 20px;
+    font-family:  "Inconsolata", monospace;
 }
 
 /* footer*/
@@ -211,3 +224,4 @@ body{
     font-weight: 700;
     box-shadow: -4px 8px 1px 0.5px rgba(19, 18, 18, 0.473);
     font-family:"Inconsolata", monospace;
+}
