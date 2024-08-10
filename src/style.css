@@ -99,9 +99,13 @@ body{
     background-repeat: no-repeat;
     z-index: -2;
 }
-.hands::after{
+.choice::after{
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+}
+.choice-btn:focus .choice::after{
+    opacity: 1;
+    box-shadow: rgba(141, 142, 145, 0.39);
 }
 
 .choice{
@@ -184,6 +188,19 @@ body{
     grid-area: rock;
     justify-self: center;
 }
+/*Results*/
+.results{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-template-areas: 
+        "you-title ai-title"
+        "you-picked ai-picked";
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
 /*rules button */
 
 .rules-btn{
@@ -230,13 +247,17 @@ body{
     cursor: pointer;
     pointer-events:inherit;
 }
+/*utilities*/
+.preload * {
+    transition: none;
+}
 
 /* footer*/
 .card-body{
     background:rgb(236, 169, 34, 0.8) ;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 18px;
     font-weight: 700;
-    box-shadow: -4px 8px 1px 0.5px rgba(19, 18, 18, 0.473);
+    box-shadow: -6px 10px 9px 5px rgba(19, 18, 18, 0.473);
     font-family:"Inconsolata", monospace;
 }
