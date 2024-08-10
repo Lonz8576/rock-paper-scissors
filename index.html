@@ -31,13 +31,13 @@
             </button>
 
         <button class="choice-btn" data-choice="scissors">
-         <div class="choice scissors" tabindex="3" >
+         <div class="choice scissors" tabindex="3">
             <img src="/rock-paper-scissors\src\images\icon-scissors.svg"alt="Scissors" />
         </div>
         </button>
 
         <button class="choice-btn" data-choice="rock">
-            <div class="choice rock" tabindex="4">
+            <div class="choice rock"tabindex="4" >
             <img src="/rock-paper-scissors\src\images\icon-rock.svg" alt="Rock"/>
             </div>
         </button>
@@ -46,18 +46,18 @@
 
     <div class="container-fluid">
     <div class="row m-5 justify-content-end">  
-    <button class="rules-btn col-2 py-2" tabindex="1">rules</button>
+    <button class="rules-btn col-2 py-2"  type="button" autofocus="true" tabindex="1" role="button"  >rules</button>
    </div>
     </div> 
     
-    <div class="modal" tabindex="-1">
+    <div class="modal" aria-labelledby="modal-title" >
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header pb-3">
               <h5 class="modal-title">Rules</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="./src/images/icon-close.svg" alt="close button"></button>
+              <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"><img src="./src/images/icon-close.svg" alt="close button"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body px-5 py-4">
               <p><img src="./src/images/image-rules.svg"></p>
             </div>
            
@@ -71,7 +71,7 @@
 
   <div class="card-body">
 
-    <p class="card-text">Coded with 💙 by <a href="https://github.com/Lonz8576"> Nic Alonso</a><p>Opened sourced on <a href="https://paper-wins.netlify.app">Netlify</a> </p>  </p>
+    <p class="card-text">Coded with 💙 by <a href="https://github.com/Lonz8576"  tabindex="-1"> Nic Alonso</a><p>Opened sourced on <a href="https://paper-wins.netlify.app"  tabindex="-1">Netlify</a> </p>  </p>
   </div>
 </div>
 </footer>
