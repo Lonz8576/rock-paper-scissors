@@ -48,4 +48,15 @@ const modalRules = document.querySelector(".modal");
         })
     })
 
+    function choose(choice) {
+        const aichoice = aiChoose();
+        displayResults([choice, aichoice]);
+    }
+    function aiChoose() {
+        const rand = Math.floor(Math.random() * CHOICES.length);
+        return CHOICES[rand];
+    }
+
+
+        
 
