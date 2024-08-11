@@ -190,16 +190,22 @@ body{
 }
 /*Results*/
 .results{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    grid-template-areas: 
-        "you-title ai-title"
-        "you-picked ai-picked";
     max-width: 960px;
     margin: 0 auto;
+    color: white;   
 }
+.results-heading{
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding: 4rem 0 8rem;
+}
+.result-picked{
+    background: #080b14;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
 
+}
 
 /*rules button */
 
