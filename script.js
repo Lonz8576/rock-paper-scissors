@@ -60,14 +60,16 @@ const modalRules = document.querySelector(".modal");
         pickResults.forEach((resultDiv, idx) => {
             setTimeout(() => {
                 resultDiv.innerHTML = `
-                <button class="choice-btn" data-choice="${results[idx].name}">
+                <button class="choice-btn" >
                 <div class="choice ${results[idx].name}">
-                <img src="/rock-paper-scissors/src/images/icon-${results[idx].name}.svg" }"/>
+                <img src="/rock-paper-scissors/src/images/icon-${results[idx].name}.svg"} alt="${results[idx].name}" />
                 </div>
                 </button>
                 `
             }, idx * 1000);
-        })
+        });
+        gameDiv.classList.toggle("hidden")
+        resultDiv.classList.toggle("hidden")
     }
 
 

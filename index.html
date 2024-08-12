@@ -12,7 +12,7 @@
     <title>Rock, Paper, Scissors✌️</title>
 </head>
 <body class="preload">
-<div class="container-sm game">
+<div class="container-fluid game">
     <div class="scoreboard py-3">
             <div class="title">
                 <img src="/rock-paper-scissors\src\images\logo.svg" />
@@ -24,42 +24,48 @@
     </div>
 
     <section class="hands z-3">
+      
         <button class="choice-btn" data-choice="paper">
             <div class="choice paper"  >
-            <img src="/rock-paper-scissors\src\images\icon-paper.svg" class="img-choice"  alt="Paper"/>
+            <img src="./src/images/icon-paper.svg" class="img-choice"  alt="Paper"/>
         </div>
             </button>
 
         <button class="choice-btn" data-choice="scissors">
          <div class="choice scissors" >
-            <img src="/rock-paper-scissors\src\images\icon-scissors.svg"  class="img-choice" alt="Scissors" />
+            <img src="./src/images/icon-scissors.svg"  class="img-choice" alt="Scissors" />
         </div>
         </button>
 
         <button class="choice-btn" data-choice="rock">
             <div class="choice rock" >
-            <img src="/rock-paper-scissors\src\images\icon-rock.svg" class="img-choice"  alt="Rock"/>
+            <img src="./src/images/icon-rock.svg" class="img-choice"  alt="Rock"/>
             </div>
         </button>
     </section>
 
-    <section class="results container text-center ">
-      <div class="row gap-5 result-pick justify-content-evenly">
-        <h2 class="results-heading col-4">you picked</h2>
-        <h2 class="results-heading col-4">the house picked</h2>
-      </div>
-      <div class="row gap-5 justify-content-evenly results-result">
-        <div class="result-picked g-col"></div>
-        <div class="result-picked g-col"></div>
+    <section class="results container text-center hidden">
+      <div class="result-pick justify-content-evenly d-flex">
+        <h2 class="results-heading">you picked</h2>
+        <h2 class="results-heading">the house picked</h2>
+     
+        <div class="result-picked "></div>
+        <div class="win-result">
+          <h3 class="text-results pb-5"></h3>
+          <button class="play-again py-1 px-4">play again!</button>
+        </div>
+
+        <div class="result-picked"></div>
       </div>
     </section>
 
 
-    <div class="container-fluid">
-    <div class="row m-5 justify-content-end">  
-    <button class="rules-btn col-2 py-2"  type="button" autofocus="true" tabindex="1" role="button"  >rules</button>
-   </div>
-    </div> 
+    <div class="container">
+      <div class="rules row row-cols-6">
+    <button class="rules-btn col-2 justify-content-end py-2"  type="button" autofocus="true" tabindex="1" role="button">rules</button>
+  </div>
+</div>
+
     
     <div class="modal" aria-labelledby="modal-title" >
         <div class="modal-dialog">

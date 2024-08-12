@@ -26,7 +26,7 @@ a{
 body{
     font-family:"Inconsolata", monospace;
 }
-.container-sm{
+.container-fluid{
     background:radial-gradient(134% 134% at 50% 0%, #1f3757 0%, #131537 100%);
     width: 100vw;
     min-height: 100vh;
@@ -127,28 +127,17 @@ body{
     opacity:0;
     transition:opacity 0.4s ease-in-out;
 }
-.choice-btn:focus .choice::after{
-    opacity: 1;
+section > button:hover, section > button:focus, section > .choice-btn:hover{
+    z-index: -2;
+    border-radius: 50%;
     transition:opacity 0.4s ease-in-out;
-    box-shadow: 0 0 0 2rem #223351;
-    z-index: -2;
-
-}
-.choice:focus {
-    transition: 200ms ease-in-out;
-    z-index: -2;
-    transform:scale(1.1);
     opacity: 1;
     box-shadow: 0 0 0 2rem #223351;
 }
 .choice img{
     transform:scale(1.5);
 }
-.choice:hover, .choice-btn:hover{
-    transition: 200ms ease-in-out;
-    z-index: -1;
-    
-}
+
 .choice.paper::before{
     background: linear-gradient(to bottom, rgb(86, 113, 245), rgb(51, 68, 156));
     z-index: -1;
@@ -187,22 +176,59 @@ body{
 .results{
     max-width: 960px;
     margin: 0 auto;
-    color: white;   
+    color: var(--white-text); 
+    display: grid;  
+    grid-template-columns:  repeat(2, 1fr);
+    place-items: center;
+    grid-template-areas: 
+       "you-title ai-title"
+       "you-picked" "ai-picked" ;
+
 }
+.results-heading:first-of-type{
+    grid-area: you-title;
+}
+.results-heading:last-of-type{
+    grid-area: ai-title;
+}
+.result-picked:first-of-type{
+    grid-area: you-picked;
+}
+.result-picked:last-of-type{
+    grid-area: ai-picked;
+}
+.win-result{
+    grid-area: winner-result;
+    display: grid;
+    place-items: center;
+}
+.text-results{
+    font-size: 32px;
+}
+.play-again{
+    background: var(--white-text);
+    outline: none;
+    border-radius: 10px;
+    color: var(--dark-text);
+    font-family: inherit;
+}
+
 .results-heading{
-    font-size: 24px;
+    font-size: 28px;
     letter-spacing: 1px;
     padding: 4rem 0 8rem;
 }
 .result-picked{
-    background: #121a31;
+    background:#16213d;
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
-
+    z-index: 0;
+    transform: scale(1.5);
 }
 
 /*rules button */
+
 
 .rules-btn{
     background: none;
@@ -213,15 +239,14 @@ body{
     font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-size: 20px;
-    justify-content: right;
     letter-spacing: .2em;
-    pointer-events: visible;
+    pointer-events:inherit;
 }
 .rules-btn:focus{
-    border:3px solid white;
+    border:3px solid var(--white-text);
 }
 .rules-btn:hover{
-    border:3px solid white;
+    border:3px solid var(--white-text);
 }
 
 /*rules modal */
@@ -252,10 +277,13 @@ body{
 .preload * {
     transition: none;
 }
+.hidden{
+    display: none;
+}
 
 /* footer*/
 .card-body{
-    background:rgb(236, 169, 34, 0.8) ;
+    background:rgba(245, 199, 108, 0.986) ;
     border-radius: 15px;
     font-size: 18px;
     font-weight: 700;
