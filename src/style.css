@@ -79,8 +79,8 @@ body{
     display: grid;
     position: relative;
     grid-template-columns: (repeat(2, 1fr));
-    grid-gap: 8em;
-    grid-column-gap: 12em;
+    grid-gap: 6em;
+    grid-column-gap: 8em;
     grid-template-areas:
     "paper scissors"
     "rock rock";
@@ -99,66 +99,68 @@ body{
     background-repeat: no-repeat;
     z-index: -2;
 }
-.choice::after{
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-.choice-btn:focus .choice::after{
-    opacity: 1;
-    box-shadow: rgba(141, 142, 145, 0.39);
-}
 
 .choice{
     position: relative;
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
     background: var(--white-text);
     align-content: center;
+    place-items: center;
     border-radius: 50%;
     box-shadow: inset 2px 8px 3px rgba(18, 18, 18, 0.4);
+    cursor: pointer;
+    display: grid;
+}
+.choice::before, .choice::after{
+    content:"";
+    position: absolute;
+    left:-10%;
+    top:-10%;
+    width: 120%;
+    height:120%;
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+}
+.choice::after{
+    opacity:0;
+    transition:opacity 0.4s ease-in-out;
+}
+.choice-btn:focus .choice::after{
+    opacity: 1;
+    transition:opacity 0.4s ease-in-out;
+    box-shadow: 0 0 0 2rem #223351;
+    z-index: -2;
+
+}
+.choice:focus {
+    transition: 200ms ease-in-out;
+    z-index: -2;
+    transform:scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 0 2rem #223351;
 }
 .choice img{
     transform:scale(1.5);
 }
-.choice:hover{
+.choice:hover, .choice-btn:hover{
     transition: 200ms ease-in-out;
-    box-shadow: rgba(141, 142, 145, 0.39);
-    z-index: 1;
-    transform:scale(1.1);
+    z-index: -1;
+    
 }
 .choice.paper::before{
-    content:"";
-    position: absolute;
-    left:-10%;
-    top:-10%;
-    width: 120%;
-    height:120%;
-    border-radius: 50%;
-    background:  rgb(86, 113, 245);
+    background: linear-gradient(to bottom, rgb(86, 113, 245), rgb(51, 68, 156));
     z-index: -1;
     box-shadow: 1px 10px 3px  rgb(7, 14, 48);
 }
 .choice.scissors::before{
-    content:"";
-    position: absolute;
-    left:-10%;
-    top:-10%;
-    width: 120%;
-    height:120%;
-    border-radius: 50%;
-    background: rgb(236, 169, 34);
+    background: linear-gradient(to bottom, rgb(247, 195, 92), rgb(243, 174, 35));;
     z-index: -1;
     box-shadow: 1px 10px 3px  rgb(43, 31, 7);
 }
 .choice.rock::before{
-    content:"";
-    position: absolute;
-    left:-10%;
-    top:-10%;
-    width: 120%;
-    height:120%;
-    border-radius: 50%;
-    background: rgb(220, 46, 78);
+    background:linear-gradient(to bottom, rgb(214, 67, 94), rgb(220, 46, 78));
     z-index: -1;
     box-shadow:1px 10px 3px rgb(46, 9, 16);
 }
@@ -168,14 +170,7 @@ body{
     background:none;
     outline: none;
 }
-.choice:focus {
-    transition: 200ms ease-in-out;
-    box-shadow: rgba(141, 142, 145, 0.39);
-    z-index: 1;
-    transform:scale(1.1);
-    opacity: 1;
-    box-shadow: 0 0 0 2rem #223351;
-}
+
 
 
 .choice-btn[data-choice="paper"]{
@@ -200,10 +195,10 @@ body{
     padding: 4rem 0 8rem;
 }
 .result-picked{
-    background: #080b14;
+    background: #121a31;
     border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
 
 }
 

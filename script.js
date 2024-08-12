@@ -35,11 +35,11 @@ const modalRules = document.querySelector(".modal");
         }
     ];
     const choiceButtons = document.querySelectorAll(".choice-btn");
-    const gameDiv = document.querySelector(".game");
+    const gameDiv = document.querySelector(".hands");
     const resultDiv = document.querySelector(".results");
-    const pickResults = document.querySelectorAll(".results-result");
+    const pickResults = document.querySelectorAll(".result-picked");
 
-    choiceButtons.forEach( button => {
+    choiceButtons.forEach(button => {
         button.addEventListener( "click", () => {
             const choiceName = button.dataset.choice;
             const choice = CHOICES.find(choice => choice.name === choiceName);
@@ -55,6 +55,19 @@ const modalRules = document.querySelector(".modal");
     function aiChoose() {
         const rand = Math.floor(Math.random() * CHOICES.length);
         return CHOICES[rand];
+    }
+    function displayResults(results) {
+        pickResults.forEach((resultDiv, idx) => {
+            setTimeout(() => {
+                resultDiv.innerHTML = `
+                <button class="choice-btn" data-choice="${results[idx].name}">
+                <div class="choice ${results[idx].name}">
+                <img src="/rock-paper-scissors/src/images/icon-${results[idx].name}.svg" }"/>
+                </div>
+                </button>
+                `
+            }, idx * 1000);
+        })
     }
 
 
