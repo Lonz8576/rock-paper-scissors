@@ -182,7 +182,7 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     place-items: center;
     grid-template-areas: 
        "you-title ai-title"
-       "you-picked" "ai-picked" ;
+       "you-picked ai-picked" ;
 
 }
 .results-heading:first-of-type{
@@ -202,21 +202,48 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     display: grid;
     place-items: center;
 }
+.winner .choice::after{
+    box-shadow: 0 0 0 30px #273252, 0 0 0 60px #202c4e, 0 0 0 90px #1e2949;
+    opacity: .9;
+    
+}
+.results.show-winner{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "you-title . ai-title"
+    "you-picked winner-result ai-picked" ;
+}
 .text-results{
-    font-size: 32px;
+    font-size: 36px;
+    z-index: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
 }
 .play-again{
     background: var(--white-text);
     outline: none;
-    border-radius: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
     color: var(--dark-text);
     font-family: inherit;
+    text-transform: inherit;
+    font-size:20px;
+    z-index: 1;
+    pointer-events: inherit;
+    letter-spacing: .5px;
+    
+}
+.play-again:focus{
+    border:3px solid rgb(28, 28, 87);
 }
 
+
 .results-heading{
-    font-size: 28px;
+    font-size: 22px;
     letter-spacing: 1px;
-    padding: 4rem 0 8rem;
+    padding: 2rem 0 6rem;
+    text-transform: uppercase;
 }
 .result-picked{
     background:#16213d;
@@ -225,7 +252,7 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     height: 10rem;
     z-index: 0;
     transform: scale(1.5);
-}
+}   
 
 /*rules button */
 
@@ -234,6 +261,7 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     background: none;
     color: var(--white-text);
     border-radius: 10px;
+    margin-top: 3rem;;
     outline: none;
     border: 2px solid var(--outline-color);
     font-family: "Inconsolata", monospace;
@@ -290,3 +318,4 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     box-shadow: -6px 10px 9px 5px rgba(19, 18, 18, 0.473);
     font-family:"Inconsolata", monospace;
 }
+

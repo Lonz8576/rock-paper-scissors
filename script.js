@@ -12,9 +12,6 @@ const modalRules = document.querySelector(".modal");
     rulesBtn.addEventListener("click", () => {
         modalRules.classList.toggle ("modal-shown")
     } );
-
-
-   
     closeBtn.addEventListener('click', () => {
         modalRules.classList.toggle("modal-shown")
     });
@@ -39,6 +36,12 @@ const modalRules = document.querySelector(".modal");
     const resultDiv = document.querySelector(".results");
     const pickResults = document.querySelectorAll(".result-picked");
 
+        const resultWinner = document.querySelector(".win-result");
+        const resultText = document.querySelector(".text-results");
+
+    const playAgainBtn = document.querySelector(".play-again");
+
+
     choiceButtons.forEach(button => {
         button.addEventListener( "click", () => {
             const choiceName = button.dataset.choice;
@@ -51,6 +54,7 @@ const modalRules = document.querySelector(".modal");
     function choose(choice) {
         const aichoice = aiChoose();
         displayResults([choice, aichoice]);
+        displayWinner([choice, aichoice]);
     }
     function aiChoose() {
         const rand = Math.floor(Math.random() * CHOICES.length);
@@ -71,7 +75,41 @@ const modalRules = document.querySelector(".modal");
         gameDiv.classList.toggle("hidden")
         resultDiv.classList.toggle("hidden")
     }
-
-
+    function displayWinner(results) {
+        setTimeout(() => {
+            const  humanWins = isWinner(results);
+            const aiWins = isWinner(results.reverse());
         
+        if(humanWins) {
+            resultText.innerHTML = "you saved the human race!";
+            pickResults[0].classList.toggle("winner");
+        } else if(aiWins) {
+            resultText.innerHTML = "the robots are taking over!";
+            pickResults[1].classList.toggle("winner");
 
+        } else {
+            resultText.innerHTML = "draw, try again";
+
+        }
+        resultWinner.classList.toggle("hidden");
+        resultDiv.classList.toggle("show-winner");
+        }, 1000);
+       
+    }
+
+    function isWinner(results) {
+        return results[0].beats === results[1].name;
+    }
+    playAgainBtn.addEventListener("click", () => {
+        gameDiv.classList.toggle("hidden");
+        resultDiv.classList.toggle("hidden");
+
+        pickResults.forEach(resultDiv => {
+            resultDiv.innerHTML = "";
+            resultDiv.classList.remove('winner');
+        });
+        resultText.innerText = "";
+        resultWinner.classList.toggle("hidden");
+        resultDiv.classList.toggle("show-winner");
+    });
+   
