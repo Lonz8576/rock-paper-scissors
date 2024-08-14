@@ -1,14 +1,5 @@
 
 
-/*.//
-.inconsolata-<uniquifier> {
-  font-family: "Inconsolata", monospace;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}*/
 
 
 :root{
@@ -159,9 +150,6 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     background:none;
     outline: none;
 }
-
-
-
 .choice-btn[data-choice="paper"]{
     grid-area: paper;
 }
@@ -200,19 +188,18 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
 .win-result{
     grid-area: winner-result;
     display: grid;
-    place-items: center;
+    place-items: center;   
 }
 .winner .choice::after{
     box-shadow: 0 0 0 30px #273252, 0 0 0 60px #202c4e, 0 0 0 90px #1e2949;
-    opacity: .9;
-    
+    opacity: .9;    
 }
 .results.show-winner{
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     "you-title . ai-title"
     "you-picked winner-result ai-picked" ;
-}
+   }
 .text-results{
     font-size: 36px;
     z-index: 1;
@@ -220,32 +207,30 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     text-transform: uppercase;
     letter-spacing: .5px;
 }
-.play-again{
+.win-result button{
     background: var(--white-text);
-    outline: none;
     font-weight: 600;
-    border: 2px solid transparent;
+    border: 2px solid rgb(81, 81, 211);
     border-radius: 8px;
     color: var(--dark-text);
-    font-family: inherit;
-    text-transform: inherit;
+    font-family: "Inconsolata", monospace;
+    text-transform: uppercase;
     font-size:20px;
     z-index: 1;
-    pointer-events:none;
+    outline: none;
+    cursor: pointer;
     letter-spacing: .5px;
     
 }
 .play-again:focus{
-    background: var(--dark-text);
+  
     border:4px solid rgb(9, 9, 29);
-    color: var(--white-text);
 }
 .play-again:hover{
-    background: var(--dark-text);
+  
     border:4px solid rgb(9, 9, 29);
-    color: var(--white-text);
-    pointer-events: inherit;
 }
+
 
 
 

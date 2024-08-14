@@ -108,9 +108,11 @@ const modalRules = document.querySelector(".modal");
         scoreNum.innerText = score;
 
     }
+    
     playAgainBtn.addEventListener("click", () => {
-        gameDiv.classList.toggle("hidden");
-        resultDiv.classList.toggle("hidden");
+        
+        gameDiv.classList.toggle ("hidden")
+        resultDiv.classList.toggle ("hidden")
 
         pickResults.forEach(resultDiv => {
             resultDiv.innerHTML = "";
