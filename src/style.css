@@ -223,6 +223,7 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
 .play-again{
     background: var(--white-text);
     outline: none;
+    font-weight: 600;
     border: 2px solid transparent;
     border-radius: 8px;
     color: var(--dark-text);
@@ -230,13 +231,22 @@ section > button:hover, section > button:focus, section > .choice-btn:hover{
     text-transform: inherit;
     font-size:20px;
     z-index: 1;
-    pointer-events: inherit;
+    pointer-events:none;
     letter-spacing: .5px;
     
 }
 .play-again:focus{
-    border:3px solid rgb(28, 28, 87);
+    background: var(--dark-text);
+    border:4px solid rgb(9, 9, 29);
+    color: var(--white-text);
 }
+.play-again:hover{
+    background: var(--dark-text);
+    border:4px solid rgb(9, 9, 29);
+    color: var(--white-text);
+    pointer-events: inherit;
+}
+
 
 
 .results-heading{

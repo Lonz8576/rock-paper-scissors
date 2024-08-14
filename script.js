@@ -40,6 +40,8 @@ const modalRules = document.querySelector(".modal");
         const resultText = document.querySelector(".text-results");
 
     const playAgainBtn = document.querySelector(".play-again");
+    const scoreNum = document.querySelector(".score-num");
+    let score = 0;
 
 
     choiceButtons.forEach(button => {
@@ -83,10 +85,11 @@ const modalRules = document.querySelector(".modal");
         if(humanWins) {
             resultText.innerHTML = "you saved the human race!";
             pickResults[0].classList.toggle("winner");
+            keepScore(1);
         } else if(aiWins) {
             resultText.innerHTML = "the robots are taking over!";
             pickResults[1].classList.toggle("winner");
-
+            keepScore(-1);
         } else {
             resultText.innerHTML = "draw, try again";
 
@@ -99,6 +102,11 @@ const modalRules = document.querySelector(".modal");
 
     function isWinner(results) {
         return results[0].beats === results[1].name;
+    }
+    function keepScore(point) {
+        score += point
+        scoreNum.innerText = score;
+
     }
     playAgainBtn.addEventListener("click", () => {
         gameDiv.classList.toggle("hidden");
